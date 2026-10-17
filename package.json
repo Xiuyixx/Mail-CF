@@ -1,0 +1,16 @@
+{
+  "name": "mail-cf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check index.js && npx prettier --check index.js test.js",
+    "format": "prettier --write index.js test.js",
+    "browser:test": "playwright test"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10",
+    "wrangler": "4.151.0",
+    "@playwright/test": "^1.56.1"
+  }
+}

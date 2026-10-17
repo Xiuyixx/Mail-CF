@@ -1,0 +1,19 @@
+name = "mail-cf"
+main = "index.js"
+compatibility_date = "2026-10-15"
+keep_vars = true
+
+# Runtime variables and Secrets are managed in the Cloudflare Dashboard.
+# Do not add a [vars] section here, or Git deployments may overwrite Dashboard values.
+
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "RateLimiter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RateLimiter"]
+
+# Secrets (never commit values):
+# npx wrangler secret put PASSWD
+# npx wrangler secret put API_KEY
